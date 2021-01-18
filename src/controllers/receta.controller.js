@@ -75,7 +75,7 @@ export const deleteReceta = async (req, res) => {
   const { id } = req.params;
   try {
     await Receta.findOneAndDelete(id);
-    res.json({ message: "Receta eliminada satisfactoriamente" });
+    res.json({ message: "Receta eliminada con éxito" });
   } catch (error) {
     return res.status(500).json({
       message: error.message || `No se pudo elimianr la receta con id ${id}`,
