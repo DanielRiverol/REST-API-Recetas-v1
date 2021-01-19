@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
+import path from 'path'
 import RecipesRoutes from "./routes/recipe.routes";
 
 const app = express();
@@ -17,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //Routes
 app.get("/", (req, res) => {
-  res.json({ message: "Api home" });
+  res.sendFile(path.join(__dirname,'./views/index.html'))
 });
 app.use("/api/v1/recetas", RecipesRoutes);
 
