@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //Routes
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname,'./views/index.html'))
+  res.sendFile(path.join(__dirname,'./index.html'))
 });
 app.use("/api/v1/recetas", RecipesRoutes);
 
